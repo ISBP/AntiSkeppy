@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="events:jar">
+    <output-path>$USER_HOME$/Documents/dvsrv/plugins</output-path>
+    <root id="archive" name="events.jar">
+      <element id="module-output" name="events" />
+    </root>
+  </artifact>
+</component>
