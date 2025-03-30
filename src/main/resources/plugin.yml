@@ -1,0 +1,23 @@
+name: AntiSkeppy
+version: '1.0.4'
+main: xyz.pbsi.antiSkeppy.AntiSkeppy
+prefix: PBSI
+api-version: '1.21'
+authors: [ pbsi ]
+description: The official plugin for The AntiSkeppy Foundation's events server.
+website: pbsi.xyz
+commands:
+    store:
+        description: The link for the AntiSkeppy store!
+        usage: /store
+    mutechat:
+        description: The mute chat command for AntiSkeppy events!
+        usage: /mutechat
+        permission: staff.member
+    rank:
+        description: Grants a player a rank
+        usage: /rank <player> <text>
+        permission: staff.admin
+    discord:
+        description: The link for the AntiSkeppy Discord!
+        usage: /discord
