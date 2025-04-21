@@ -1,5 +1,5 @@
 name: AntiSkeppy
-version: '1.0.4'
+version: '1.0.5'
 main: xyz.pbsi.antiSkeppy.AntiSkeppy
 prefix: PBSI
 api-version: '1.21'
@@ -12,7 +12,7 @@ commands:
         usage: /store
     mutechat:
         description: The mute chat command for AntiSkeppy events!
-        usage: /mutechat
+        usage: /mutechat [<text>]
         permission: staff.member
     rank:
         description: Grants a player a rank
