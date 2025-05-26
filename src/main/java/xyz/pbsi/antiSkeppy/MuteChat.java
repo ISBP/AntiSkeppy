@@ -20,6 +20,7 @@ import java.util.List;
 public class MuteChat implements CommandExecutor, Listener, TabExecutor {
     private boolean chat = true;
     private boolean staff = false;
+    private boolean self = false;
     private AntiSkeppy plugin;
     public final String bypass = "mc.bypass";
     public final String staffBypass = "mc.staff";
@@ -51,12 +52,14 @@ public class MuteChat implements CommandExecutor, Listener, TabExecutor {
     @Override
     public boolean onCommand(@NotNull CommandSender commandSender, @NotNull Command command, @NotNull String s, @NotNull String[] strings) {
         if (strings.length == 0) {
-            chat = !chat;
-            if (chat) {
+            if (!chat) {
                 plugin.getServer().broadcastMessage("§a§lMutechat:§r§f Chat has been unmuted!");
+                chat = !chat;
             } else {
+                chat = false;
                 plugin.getServer().broadcastMessage("§c§lMutechat:§r§f Chat has been muted!");
             }
+
             return true;
         }
         if (strings[0].equalsIgnoreCase("staff")) {
@@ -76,6 +79,25 @@ public class MuteChat implements CommandExecutor, Listener, TabExecutor {
             }
 
         }
+
+        if (strings[0].equalsIgnoreCase("Self")) {
+            if (commandSender.hasPermission(admin)) {
+                if (self) {
+                    self = false;
+                    commandSender.sendMessage("§c§lMutechat:§r§f Set mode to §cNORMAL");
+                } else {
+                    staff = true;
+                    commandSender.sendMessage("§c§lMutechat:§r§f Set mode to §cSELF");
+                }
+                return true;
+            }
+            else{
+                commandSender.sendMessage("§cThis requires admin permission!");
+                return true;
+            }
+
+        }
+
         return false;
     }
     @Override

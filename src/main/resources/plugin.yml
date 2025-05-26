@@ -1,10 +1,10 @@
 name: AntiSkeppy
-version: '1.0.5'
+version: '1.0.6'
 main: xyz.pbsi.antiSkeppy.AntiSkeppy
 prefix: PBSI
 api-version: '1.21'
 authors: [ pbsi ]
-description: The official plugin for The AntiSkeppy Foundation's events server.
+description: The official plugin for The AntiSkeppy Foundation's server.
 website: pbsi.xyz
 commands:
     store:
@@ -17,7 +17,7 @@ commands:
     rank:
         description: Grants a player a rank
         usage: /rank <player> <text>
-        permission: staff.admin
+        permission: rank.admin
     discord:
         description: The link for the AntiSkeppy Discord!
         usage: /discord
