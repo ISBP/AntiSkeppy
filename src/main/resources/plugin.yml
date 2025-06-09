@@ -1,9 +1,10 @@
 name: AntiSkeppy
 version: '1.0.6'
-main: xyz.pbsi.antiSkeppy.AntiSkeppy
 prefix: PBSI
+main: xyz.pbsi.antiSkeppy.AntiSkeppy
 api-version: '1.21'
 authors: [ pbsi ]
+contributors: [QWERTZ, Propsik, AntiSkeppy]
 description: The official plugin for The AntiSkeppy Foundation's server.
 website: pbsi.xyz
 commands:

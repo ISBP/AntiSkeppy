@@ -59,6 +59,12 @@
             <id>sonatype</id>
             <url>https://oss.sonatype.org/content/groups/public/</url>
         </repository>
+        <repository>
+            <id>invadedlands-repo-maven</id>
+            <name>InvadedLands Maven</name>
+            <url>https://repo.invadedlands.net/maven</url>
+        </repository>
+
     </repositories>
 
     <dependencies>
@@ -74,5 +80,6 @@
             <version>5.2</version>
             <scope>provided</scope>
         </dependency>
+
     </dependencies>
 </project>

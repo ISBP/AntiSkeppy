@@ -15,11 +15,13 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 
-public final class AntiSkeppy extends JavaPlugin implements Listener {
+public class AntiSkeppy extends JavaPlugin implements Listener {
     private LuckPerms luckPerms;
     FileConfiguration config = this.getConfig();
+    private static AntiSkeppy INSTANCE;
     @Override
     public void onEnable() {
+        INSTANCE = this;
         // Plugin startup logic
         this.luckPerms = getServer().getServicesManager().load(LuckPerms.class);
         RegisteredServiceProvider<LuckPerms> provider = Bukkit.getServicesManager().getRegistration(LuckPerms.class);
@@ -41,8 +43,11 @@ public final class AntiSkeppy extends JavaPlugin implements Listener {
             config.options().copyDefaults(true);
             saveConfig();
         }
-    }
 
+    }
+    public static AntiSkeppy getInstance() {
+        return INSTANCE;
+    }
 
     @Override
     public void onDisable() {

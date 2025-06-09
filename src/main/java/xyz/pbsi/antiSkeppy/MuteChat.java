@@ -8,7 +8,6 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.server.TabCompleteEvent;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -17,12 +16,12 @@ import java.util.Arrays;
 import java.util.List;
 
 
-public class MuteChat implements CommandExecutor, Listener, TabExecutor {
+public class MuteChat implements CommandExecutor, Listener, TabExecutor  {
     private boolean chat = true;
     private boolean staff = false;
     private boolean self = false;
     private Player selfplayer = null;
-    private AntiSkeppy plugin;
+    private final AntiSkeppy plugin;
     public final String bypass = "mc.bypass";
     public final String staffBypass = "mc.staff";
     public final String admin = "mc.admin";
@@ -80,12 +79,11 @@ public class MuteChat implements CommandExecutor, Listener, TabExecutor {
                     self = false;
                     commandSender.sendMessage("§c§lMutechat:§r§f Set mode to §cSTAFF");
                 }
-                return true;
             }
             else{
                 commandSender.sendMessage("§cThis requires admin permission!");
-                return true;
             }
+            return true;
 
         }
 

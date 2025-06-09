@@ -13,6 +13,7 @@ import org.jetbrains.annotations.NotNull;
 @SuppressWarnings("deprecation")
 public class Discord implements CommandExecutor  {
     //FileConfiguration config = this.getConfig();
+    String dc = AntiSkeppy.getInstance().config.getString("Discord");
     @Override
 
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command cmd, @NotNull String label, String[] args) {
@@ -20,7 +21,7 @@ public class Discord implements CommandExecutor  {
             TextComponent message = new TextComponent("§cCheck out our discord§4 here§c!");
             //String discord = config.getString("");
 
-            message.setClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, "https://antiskeppy.xyz/discord"));
+            message.setClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, dc));
             player.sendMessage(message);
 
         }
