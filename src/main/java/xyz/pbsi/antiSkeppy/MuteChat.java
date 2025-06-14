@@ -15,7 +15,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-
 public class MuteChat implements CommandExecutor, Listener, TabExecutor  {
     private boolean chat = true;
     private boolean staff = false;
@@ -26,12 +25,9 @@ public class MuteChat implements CommandExecutor, Listener, TabExecutor  {
     public final String staffBypass = "mc.staff";
     public final String admin = "mc.admin";
 
-
-
     public MuteChat(AntiSkeppy plugin) {
         this.plugin = plugin;
     }
-
 
     @EventHandler
     public void onAsyncPlayerChat(AsyncPlayerChatEvent event)

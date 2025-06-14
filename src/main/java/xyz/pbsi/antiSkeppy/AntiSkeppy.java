@@ -34,10 +34,12 @@ public class AntiSkeppy extends JavaPlugin implements Listener {
         this.getServer().getPluginManager().registerEvents(a, this);
         this.getCommand("rank").setExecutor(new Rank());
         this.getCommand("discord").setExecutor(new Discord());
+        this.getCommand("clearchat").setExecutor(new ClearChat());
         getServer().getPluginManager().registerEvents(this, this);
         if(!getDataFolder().exists())
         {
-            getDataFolder().mkdir();        this.saveDefaultConfig();
+            getDataFolder().mkdir();
+            this.saveDefaultConfig();
             config.addDefault("Server", "events");
             config.addDefault("Discord", "https://antiskeppy.xyz/discord");
             config.options().copyDefaults(true);
