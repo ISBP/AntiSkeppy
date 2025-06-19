@@ -23,6 +23,16 @@ commands:
         description: The link for the AntiSkeppy Discord!
         usage: /discord
     clearchat:
-            description: Clears the chat
-            usage: /clearchat
-            permission: staff.member
+        description: Clears the chat
+        usage: /clearchat
+        permission: staff.member
+    ad:
+        description: Sends an advertisement message.
+        usage: "§4§lUSAGE: §c/ad <advertisement>"
+        permission: staff.admin
+        permission-message: "§cYou don't have the required permission to run this command!"
+    setstreamlink:
+        description: Sets the stream ad link.
+        usage: "§4§lUSAGE: §c/setstreamlink <link>"
+        permission: staff.admin
+        permission-message: "§cYou don't have the required permission to run this command!"

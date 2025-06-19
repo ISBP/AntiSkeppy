@@ -11,6 +11,7 @@ import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -35,17 +36,10 @@ public class AntiSkeppy extends JavaPlugin implements Listener {
         this.getCommand("rank").setExecutor(new Rank());
         this.getCommand("discord").setExecutor(new Discord());
         this.getCommand("clearchat").setExecutor(new ClearChat());
+        this.getCommand("ad").setExecutor(new Ad());
+        this.getCommand("setstreamlink").setExecutor(new SetStreamLink());
         getServer().getPluginManager().registerEvents(this, this);
-        if(!getDataFolder().exists())
-        {
-            getDataFolder().mkdir();
-            this.saveDefaultConfig();
-            config.addDefault("Server", "events");
-            config.addDefault("Discord", "https://antiskeppy.xyz/discord");
-            config.options().copyDefaults(true);
-            saveConfig();
-        }
-
+        createConfig();
     }
     public static AntiSkeppy getInstance() {
         return INSTANCE;
@@ -68,5 +62,29 @@ public class AntiSkeppy extends JavaPlugin implements Listener {
     {
         leave.setQuitMessage("");
     }
+    public void createConfig()
+    {
+        if(!getDataFolder().exists())
+        {
+            getDataFolder().mkdir();
+        }
+        File configFile = new File(AntiSkeppy.getInstance().getDataFolder(), "config.yml");
+        if(!configFile.exists()) {
+            this.saveDefaultConfig();
+            config.addDefault("Server", "events");
+            config.addDefault("Discord", "https://antiskeppy.xyz/discord");
+            config.addDefault("Store", "https://antiskeppy-shop.tebex.io/");
+            config.addDefault("SurvivalServerName", "survival");
+            config.options().copyDefaults(true);
+            saveConfig();
+        }
+    }
+    public void resetConfigValues()
+    {
+        File configFile = new File(AntiSkeppy.getInstance().getDataFolder(), "config.yml");
+        configFile.delete();
+        createConfig();
+    }
+
 
 }
